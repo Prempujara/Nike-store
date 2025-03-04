@@ -19,6 +19,41 @@ html {
     align-items: center;
     justify-content: space-between;
   }
+  /* Login and Signup Buttons */
+.loginButton,
+.signupButton {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: 2px solid #000; /* Black border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.loginButton {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.loginButton:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000; /* Black text on hover */
+    border: 2px solid #000; /* Keep black border */
+}
+
+.signupButton {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: 2px solid #000; /* Black border */
+}
+
+.signupButton:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text on hover */
+    border: 2px solid #000; /* Keep black border */
+}
   
   .search {
     display: flex;
@@ -101,7 +136,7 @@ html {
   .sliderPrice {
     position: absolute;
     top: 10%;
-    left: 10%;
+    left: 7%;
     font-size: 60px;
     font-weight: 300;
     text-align: center;
@@ -344,6 +379,102 @@ html {
     background-color: white;
     color: black;
   }
+  /* Cart Section */
+.cart {
+  margin-top: 40px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  max-width: 450px;
+  margin: auto;
+}
+
+.cart:hover {
+  transform: scale(1.02);
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cart Items */
+.cartItems {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItems li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cartItems li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.cartItemImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+/* Product Name */
+.cartItemDetails {
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Remove Button */
+.removeItemButton {
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.removeItemButton:hover {
+  background: linear-gradient(135deg, #cc0000, #ff0000);
+  transform: scale(1.1);
+}
+
+  .addToCartButton{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer; 
+  }
+  .addToCartButton:hover{
+    background-color: white;
+    color: black;
+  }
   
   .gallery {
     padding: 50px;
@@ -417,10 +548,11 @@ html {
   
   .footerRight {
     flex: 1;
+    margin: auto;
     padding: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column;nt: space-between;
+    
   }
   
   .fInput {
@@ -544,20 +676,118 @@ html {
       align-items: center;
     }
   
-    .footerLeft{
-      padding: 20px;
-      width: 90%;
-    }
   
-    .footerRight{
-      padding: 20px;
-      width: 90%;
+    .footerRight {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      background-color: whitesmoke;
-    }
+      justify-content: center; /* Centers content vertically */
+      background: linear-gradient(135deg, #1e1e1e, #292929);
+      padding: 40px;
+      border-radius: 12px;
+      color: white;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin: 0 auto; /* Centers horizontally */
+      position: relative;
+  }
+  
+  /* Ensuring footer is centered in the page */
+  footer {
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: center; /* Centers vertically */
+      height: 100vh; /* Makes sure it takes full height */
+  }
+  
+  /* Contact Form Title */
+  .fMenuTitle {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ff6b6b;
+  }
+  
+  /* Form Styles */
+  /* General footer styling */
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Centers text within elements */
+  padding: 20px;
+  background-color: #f8f8f8; /* Light grey background */
+  border-top: 1px solid #e7e7e7; /* Light border at the top */
+}
+
+/* Styling for the contact form */
+.footerRight form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; /* Limits the form width */
+}
+
+.footerRight input[type="text"],
+.footerRight input[type="email"],
+.footerRight textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footerRight textarea {
+  height: 100px; /* Fixed height for textarea */
+  resize: vertical; /* Allows vertical resizing */
+}
+
+.footerRight button {
+  padding: 10px;
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footerRight button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the social media icons */
+.fIcons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between icons */
+}
+
+.fIcon {
+  width: 24px; /* Icon size */
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Styling for the copyright text */
+.copyright {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+  
+
   
     .payment{
       width: 90%;
       padding: 20px;
     }
+  }
+  .fButton:hover{
+    background-color: white;
+    color: black;
   }
